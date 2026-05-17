@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  // Global Provider Settings
+  "providers": {
+    "google": {
+      "apiKey": "${GOOGLE_API_KEY}",
+      "defaultModel": "gemini-1.5-flash"
+    },
+    "groq": {
+      "apiKey": "${GROQ_API_KEY}",
+      "defaultModel": "llama-3.3-70b-versatile"
+    },
+    "mistral": {
+      "apiKey": "${MISTRAL_API_KEY}",
+      "defaultModel": "codestral-latest"
+    }
+  },
+  // Multi-Agent Options available in every terminal session
+  "agents": [
+    {
+      "name": "arch",
+      "provider": "google",
+      "model": "gemini-1.5-flash",
+      "systemPrompt": "Expert Architect. You have a 1M+ context window. Use it to analyze the entire project structure, you are the one that the human will talk to so you direct the other models"
+    },
+    {
+      "name": "code",
+      "provider": "mistral",
+      "model": "codestral-latest",
+      "systemPrompt": "Specialized Coder. Focus on Fill-In-The-Middle logic and clean Code. Be concise."
+    },
+    {
+      "name": "fast",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "systemPrompt": "Speed-focused assistant for terminal commands, regex, and quick bug fixes."
+    }
+  ],
+  // Global ignore rules to save context/RAM on your 8GB M1
+  "exclude": [
+    "node_modules/**",
+    ".git/**",
+    "**/dist/**",
+    "*.log"
+  ]
+}

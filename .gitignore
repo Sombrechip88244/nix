@@ -1,0 +1,23 @@
+# Nix build artifacts
+result
+result-*
+*.drv
+
+# Temporary files
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Backup files
+*.bak
+*.backup
+
+# Secrets (should never be committed)
+secrets/
+*.key
+*.pem
+*.private
+
+# Local config overrides
+config.local.json
