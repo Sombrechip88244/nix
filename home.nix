@@ -190,10 +190,24 @@
     ".api-keys".source = "${secretsPath}/api-keys";
     ".hushlogin".text = "";
     ".pi/agent/settings.json".source = ./dotfiles/pi/settings.json;
-    ".agents" = {
-      source = ./dotfiles/agents;
-      recursive = true;
-    };
+
+    # Custom skills
+    ".agents/skills/daily-brief".source = ./dotfiles/agents/skills/daily-brief;
+    ".agents/skills/daily-note".source = ./dotfiles/agents/skills/daily-note;
+    ".agents/skills/emerge".source = ./dotfiles/agents/skills/emerge;
+    ".agents/skills/morning-routine".source = ./dotfiles/agents/skills/morning-routine;
+    ".agents/skills/summarize".source = ./dotfiles/agents/skills/summarize;
+    ".agents/skills/vault-health".source = ./dotfiles/agents/skills/vault-health;
+
+    # pi-skills repo skills (flattened — each subdir becomes a top-level skill)
+    ".agents/skills/brave-search".source = ./dotfiles/agents/skills/pi-skills/brave-search;
+    ".agents/skills/browser-tools".source = ./dotfiles/agents/skills/pi-skills/browser-tools;
+    ".agents/skills/gccli".source = ./dotfiles/agents/skills/pi-skills/gccli;
+    ".agents/skills/gdcli".source = ./dotfiles/agents/skills/pi-skills/gdcli;
+    ".agents/skills/gmcli".source = ./dotfiles/agents/skills/pi-skills/gmcli;
+    ".agents/skills/transcribe".source = ./dotfiles/agents/skills/pi-skills/transcribe;
+    ".agents/skills/vscode".source = ./dotfiles/agents/skills/pi-skills/vscode;
+    ".agents/skills/youtube-transcript".source = ./dotfiles/agents/skills/pi-skills/youtube-transcript;
   };
 
   home.sessionVariables = {
