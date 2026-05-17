@@ -190,6 +190,7 @@
     ".api-keys".source = "${secretsPath}/api-keys";
     ".hushlogin".text = "";
     ".pi/agent/settings.json".source = ./dotfiles/pi/settings.json;
+    ".pi/agent/extensions".source = ./dotfiles/pi/extensions;
 
     # Custom skills
     ".agents/skills/daily-brief".source = ./dotfiles/agents/skills/daily-brief;

@@ -3,5 +3,11 @@
   "defaultProvider": "opencode-go",
   "defaultModel": "opencode-go/deepseek-v4-flash",
   "defaultThinkingLevel": "medium",
-  "theme": "catppuccin-macchiato",
+  "theme": "dark",
+  "extensions": [
+    "answer.ts",
+    "git-interceptor.ts",
+    "update.ts",
+    "whimsical.ts"
+  ]
 }
