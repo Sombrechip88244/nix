@@ -28,6 +28,7 @@
     zip
     pi-coding-agent
     zsh
+    btop
 
     # Also in home-manager, but needed early in PATH for shell init
     starship
@@ -57,9 +58,6 @@
         "/Applications/Ghostty.app"
         "/Applications/Arc.app"
         "/Applications/Obsidian.app"
-        "/Applications/Discord.app"
-        "/Applications/Alfred 5.app"
-        "/Applications/Maccy.app"
       ];
     };
 
@@ -138,12 +136,9 @@
       "iina"
       "maccy"
       "hiddenbar"
-      "beeper"
       "jellyfin-media-player"
-      "prismlauncher"
       "alfred"
-      "wezterm"
-      "capcut"
+      "tailscale-app"
     ];
   };
 
