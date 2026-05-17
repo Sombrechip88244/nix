@@ -21,3 +21,6 @@ secrets/
 
 # Local config overrides
 config.local.json
+
+# Flake.lock
+flake.lock
