@@ -4,7 +4,7 @@ Nix-darwin + home-manager configuration for macOS (Apple Silicon).
 
 ## Bootstrap on a factory-reset Mac
 
-### 1. Install Nix
+### 1. Install Determinate Nix
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
