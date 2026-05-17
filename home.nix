@@ -154,6 +154,7 @@
       zi = "z -i";
       za = "z -a";
       zq = "z -q";
+      lg = "lazygit";
     };
 
     oh-my-zsh = {
