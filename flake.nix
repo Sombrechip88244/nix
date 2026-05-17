@@ -20,9 +20,14 @@
       url = "git+ssh://git@github.com/Sombrechip88244/secrets.git";
       flake = false;
     };
+
+    pi-skills = {
+      url = "github:badlogic/pi-skills";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager, nix-homebrew, secrets, ... }: {
+  outputs = { self, nixpkgs, darwin, home-manager, nix-homebrew, secrets, pi-skills, ... }: {
     darwinConfigurations."MacBookAir" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
 
@@ -45,6 +50,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.oliverfildes = { lib, ... }: {
             _module.args.secretsPath = builtins.toString secrets;
+            _module.args.piSkillsSrc = pi-skills;
             home = {
               username = "oliverfildes";
               homeDirectory = lib.mkForce "/Users/oliverfildes";

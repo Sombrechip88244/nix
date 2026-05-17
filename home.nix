@@ -1,4 +1,4 @@
-{ config, pkgs, secretsPath, ... }:
+{ config, pkgs, secretsPath, piSkillsSrc, ... }:
 
 {
   home.packages = with pkgs; [
@@ -199,15 +199,15 @@
     ".agents/skills/summarize".source = ./dotfiles/agents/skills/summarize;
     ".agents/skills/vault-health".source = ./dotfiles/agents/skills/vault-health;
 
-    # pi-skills repo skills (flattened — each subdir becomes a top-level skill)
-    ".agents/skills/brave-search".source = ./dotfiles/agents/skills/pi-skills/brave-search;
-    ".agents/skills/browser-tools".source = ./dotfiles/agents/skills/pi-skills/browser-tools;
-    ".agents/skills/gccli".source = ./dotfiles/agents/skills/pi-skills/gccli;
-    ".agents/skills/gdcli".source = ./dotfiles/agents/skills/pi-skills/gdcli;
-    ".agents/skills/gmcli".source = ./dotfiles/agents/skills/pi-skills/gmcli;
-    ".agents/skills/transcribe".source = ./dotfiles/agents/skills/pi-skills/transcribe;
-    ".agents/skills/vscode".source = ./dotfiles/agents/skills/pi-skills/vscode;
-    ".agents/skills/youtube-transcript".source = ./dotfiles/agents/skills/pi-skills/youtube-transcript;
+    # pi-skills repo skills (fetched via flake input)
+    ".agents/skills/brave-search".source = "${piSkillsSrc}/brave-search";
+    ".agents/skills/browser-tools".source = "${piSkillsSrc}/browser-tools";
+    ".agents/skills/gccli".source = "${piSkillsSrc}/gccli";
+    ".agents/skills/gdcli".source = "${piSkillsSrc}/gdcli";
+    ".agents/skills/gmcli".source = "${piSkillsSrc}/gmcli";
+    ".agents/skills/transcribe".source = "${piSkillsSrc}/transcribe";
+    ".agents/skills/vscode".source = "${piSkillsSrc}/vscode";
+    ".agents/skills/youtube-transcript".source = "${piSkillsSrc}/youtube-transcript";
   };
 
   home.sessionVariables = {
