@@ -34,10 +34,15 @@ scutil --get LocalHostName
 
 Edit `~/.config/nix/flake.nix` and set `darwinConfigurations."YourHostName"`.
 
-### 5. Build
+### 5. Make SSH key active
 
 ```bash
-darwin-rebuild switch --flake ~/.config/nix#YourHostName
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
+
+### 6. Build
+```bash
+sudo darwin-rebuild switch --flake ~/.config/nix#MacBookAir
 ```
 
 Open a new terminal. From now on, just run `rebuild`.
