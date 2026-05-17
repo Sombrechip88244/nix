@@ -210,8 +210,16 @@
     ".agents/skills/vscode".source = "${piSkillsSrc}/vscode";
     ".agents/skills/youtube-transcript".source = "${piSkillsSrc}/youtube-transcript";
   };
+  
+
+  home-manager.users.oliverfildes = {
+  home.sessionVariables = {
+    NODE_PATH = "$HOME/.pi/agent/extensions/node_modules";
+  };
+};
 
   home.sessionVariables = {
+    NODE_PATH = "$HOME/.pi/agent/extensions/node_modules";
     EDITOR = "nvim";
     VISUAL = "nvim";
     BROWSER = "open";
