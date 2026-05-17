@@ -90,7 +90,9 @@
 
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     matchBlocks = {
+      "*" = { };
       "github.com" = {
         identityFile = "~/.ssh/id_ed25519";
       };
@@ -123,7 +125,7 @@
     history = {
       size = 100000;
       save = 100000;
-      path = "~/.config/zsh/.zsh_history";
+      path = "${config.home.homeDirectory}/.config/zsh/.zsh_history";
       ignoreDups = true;
       share = true;
       extended = true;
@@ -187,6 +189,10 @@
     ".api-keys".source = "${secretsPath}/api-keys";
     ".hushlogin".text = "";
     ".pi/agent/settings.json".source = ./dotfiles/pi/settings.json;
+    ".agents" = {
+      source = ./dotfiles/agents;
+      recursive = true;
+    };
   };
 
   home.sessionVariables = {
